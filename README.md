@@ -1,5 +1,5 @@
 Book Library API
-
+This is the first API project I built using @api_view() and functional view
 A RESTful Book Library API built with Django and Django REST Framework (DRF). The application provides endpoints for managing books and authors, including creating, retrieving, updating, and deleting records.
 
 The project uses PostgreSQL as its database and provides interactive API documentation through Swagger UI and ReDoc.
@@ -117,7 +117,7 @@ The documentation allows developers to explore the available endpoints, inspect 
 Installation and Setup
 1. Clone the repository
 bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/eziuche-nwaogu/django_backend
 cd book_drf
 
 2. Create a virtual environment
@@ -209,6 +209,6 @@ Automated API tests.
 More advanced validation and error handling.
 Author
 
-Your Name
+Ezyurch
 
-GitHub: YOUR_GITHUB_USERNAME
+GitHub: eziuche-nwaogu
