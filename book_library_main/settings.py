@@ -93,22 +93,22 @@ WSGI_APPLICATION = "book_library_main.wsgi.application"
 
 
 
-DATABASES = {
-    'default': dj_database_url.config(
-        default=f'postgresql://postgres:{config("my_password")}@localhost:5432/{config("my_database_name")}',
-        conn_max_age=600,
-        ssl_require=not DEBUG
-    )
-}
-
-
 # DATABASES = {
 #     'default': dj_database_url.config(
-#         default=config('DATABASE_URL'),
+#         default=f'postgresql://postgres:{config("my_password")}@localhost:5432/{config("my_database_name")}',
 #         conn_max_age=600,
 #         ssl_require=not DEBUG
 #     )
 # }
+
+
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL'),
+        conn_max_age=600,
+        ssl_require=not DEBUG
+    )
+}
 
 
 
