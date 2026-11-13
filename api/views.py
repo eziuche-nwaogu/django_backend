@@ -13,7 +13,7 @@ from rest_framework import status
 def books_list(request):
     if request.method == 'GET':
         # books = Book.objects.all()
-        books = Book.objects.select_related('book_author').all()
+        books = Book.objects.select_related('author').all()
         serializer = BookSerializer(books, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     elif request.method == 'POST':

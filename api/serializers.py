@@ -28,13 +28,13 @@ class AuthorSerializer(serializers.ModelSerializer):
 
 
 class BookSerializer(serializers.ModelSerializer):
-    book_author = serializers.PrimaryKeyRelatedField(
+    author = serializers.PrimaryKeyRelatedField(
         queryset=Author.objects.all(),
-        write_only=True
+        # write_only=True
     )
 
     author_details = AuthorSerializer(
-        source='book_author',
+        source='author',
         read_only=True
     )
 
@@ -48,6 +48,6 @@ class BookSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Title cannot be empty.")
         elif len(data['book_title']) < 5:
             raise serializers.ValidationError("Title must be at least 5 characters long.")
-        elif data['book_title'] == data['book_author'].author_first_name or data['book_title'] == data['book_author'].author_last_name:
+        elif data['book_title'] == data['author'].author_first_name or data['book_title'] == data['author'].author_last_name:
             raise serializers.ValidationError("Title and content cannot be the same.")
         return data

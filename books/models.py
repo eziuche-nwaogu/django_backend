@@ -20,7 +20,7 @@ class Author(models.Model):
 
 class Book(models.Model):
     book_title = models.CharField(max_length=100)
-    book_author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name="books")
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name="books")
     book_published_date = models.DateField()
     book_isbn = models.CharField(max_length=13, unique=True)
     price = models.DecimalField(max_digits=8, decimal_places=2)
